@@ -793,14 +793,14 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    body: Attribute.Blocks;
+    title: Attribute.String & Attribute.Required;
+    body: Attribute.Blocks & Attribute.Required;
     author: Attribute.Relation<
       'api::article.article',
       'oneToOne',
       'api::author.author'
     >;
-    date: Attribute.Date;
+    date: Attribute.Date & Attribute.Required;
     hero: Attribute.Media;
     media: Attribute.Media;
     createdAt: Attribute.DateTime;
